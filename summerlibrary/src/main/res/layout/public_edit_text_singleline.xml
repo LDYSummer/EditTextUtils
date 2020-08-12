@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/editTextUtilsDistanceDefault_12"
+    android:paddingEnd="@dimen/editTextUtilsDistanceDefault_12">
+
+    <ImageView
+        android:id="@+id/public_single_line_btn_hide"
+        android:layout_width="@dimen/editTextUtilsImgDefault_20"
+        android:layout_height="@dimen/editTextUtilsImgDefault_20"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/editTextUtilsDistanceDefault_12"
+        android:src="@drawable/edit_text_utils_eye_hide"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/public_single_line_btn_hide">
+
+        <ImageView
+            android:id="@+id/public_single_line_btn_delete"
+            android:layout_width="@dimen/editTextUtilsImgDefault_20"
+            android:layout_height="@dimen/editTextUtilsImgDefault_20"
+            android:layout_marginStart="@dimen/editTextUtilsDistanceDefault_12"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/edit_text_utils_clean_all"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/public_single_line_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/editTextUtilsTransparentDefault"
+            android:singleLine="true"
+            android:layout_toStartOf="@id/public_single_line_btn_delete"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

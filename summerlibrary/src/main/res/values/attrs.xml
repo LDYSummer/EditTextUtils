@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditTextUtils">
+<!--        editTextMode 输入框模式-->
+        <attr name="editTextMode">
+<!--            非密码形式单行输入框-->
+            <flag name="modeSingleNormal" value="0x00000000"/>
+<!--            密码形式单行输入框-->
+            <flag name="modeSinglePwd" value="0x00000001"/>
+<!--            多行文本输入框-->
+            <flag name="modeMultiLine" value="0x00000002"/>
+        </attr>
+
+<!--        layout背景颜色-->
+        <attr name="background" format="reference"/>
+<!--        hint文本-->
+        <attr name="hint" format="string"/>
+<!--        text && hint size-->
+        <attr name="textSize" format="dimension"/>
+<!--        text color-->
+        <attr name="textColor" format="color"/>
+<!--        hint color-->
+        <attr name="hintColor" format="color"/>
+
+<!--        imeOptions 回车按钮类型-->
+        <attr name="imeOptions">
+            <!-- There is no specific action associated with this editor, let the
+             editor come up with its own if it can.
+             Corresponds to
+             {@link android.view.inputmethod.EditorInfo#IME_NULL}. -->
+<!--            <flag name="actionUnspecified" value="0x00000000" />-->
+            <!-- This editor has no action associated with it.
+             Corresponds to
+             {@link android.view.inputmethod.EditorInfo#IME_ACTION_NONE}. -->
+            <flag name="actionNone" value="0x00000001" />
+            <!-- The action key performs a "go"
+                 operation to take the user to the target of the text they typed.
+                 Typically used, for example, when entering a URL.
+                 Corresponds to
+                 {@link android.view.inputmethod.EditorInfo#IME_ACTION_GO}. -->
+            <flag name="actionGo" value="0x00000002" />
+            <!-- The action key performs a "search"
+                 operation, taking the user to the results of searching for the text
+                 the have typed (in whatever context is appropriate).
+                 Corresponds to
+                 {@link android.view.inputmethod.EditorInfo#IME_ACTION_SEARCH}. -->
+            <flag name="actionSearch" value="0x00000003" />
+            <!-- The action key performs a "send"
+                 operation, delivering the text to its target.  This is typically used
+                 when composing a message.
+                 Corresponds to
+                 {@link android.view.inputmethod.EditorInfo#IME_ACTION_SEND}. -->
+            <flag name="actionSend" value="0x00000004" />
+            <!-- The action key performs a "next"
+                 operation, taking the user to the next field that will accept text.
+                 Corresponds to
+                 {@link android.view.inputmethod.EditorInfo#IME_ACTION_NEXT}. -->
+            <flag name="actionNext" value="0x00000005" />
+            <!-- The action key performs a "done"
+                 operation, closing the soft input method.
+                 Corresponds to
+                 {@link android.view.inputmethod.EditorInfo#IME_ACTION_DONE}. -->
+            <flag name="actionDone" value="0x00000006" />
+        </attr>
+
+<!--        if multiline show count-->
+        <attr name="showTextCount" format="boolean"/>
+<!--        multiline max text count-->
+        <attr name="maxTextCount" format="integer"/>
+<!--        multiline editText min height-->
+        <attr name="minHeight" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>

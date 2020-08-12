@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EditTextDemo</string>
+
+    <string name="public_edit_text_hint">请输入密码</string>
+</resources>

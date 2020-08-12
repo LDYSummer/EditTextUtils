@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="editTextUtilsDistanceDefault_6">6dp</dimen>
+    <dimen name="editTextUtilsDistanceDefault_12">12dp</dimen>
+    <dimen name="editTextUtilsImgDefault_20">20dp</dimen>
+    <dimen name="editTextUtilsTextFontDefault">15sp</dimen>
+    <dimen name="editTextUtilsMinHeightDefault">200dp</dimen>
+</resources>
