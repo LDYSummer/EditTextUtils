@@ -1,6 +1,8 @@
 # EditTextUtils
-文本输入框
-[![](https://jitpack.io/v/LDYSummer/EditTextUtils.svg)](https://jitpack.io/#LDYSummer/EditTextUtils)
+- 单行文本输入框(密码式/非密码式)
+- 多行文本输入框 可统计字数
+- 一键删除已输入文本
+
 
 ### 添加项目依赖
 #### build.gradle
@@ -88,3 +90,6 @@ if (etu_single_normal.contentIsUnusable(minLength,maxLength,fixLength)){
      ...
 }
 ```
+#### 其他方法
+- getText()
+- clearText()
