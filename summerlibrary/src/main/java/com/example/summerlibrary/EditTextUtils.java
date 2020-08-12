@@ -76,7 +76,7 @@ public class EditTextUtils extends RelativeLayout {
         mInputMode = ta.getInt(R.styleable.EditTextUtils_imeOptions,EditorInfo.IME_ACTION_DONE);
         if (mMode == TYPE_MULTILINE){
             mShowTextCount = ta.getBoolean(R.styleable.EditTextUtils_showTextCount,false);
-            mMaxTextCount = ta.getInteger(R.styleable.EditTextUtils_maxTextCount,150);
+            mMaxTextCount = ta.getInteger(R.styleable.EditTextUtils_maxTextCount,100);
             mMinHeight = ta.getDimension(R.styleable.EditTextUtils_minHeight,getResources().getDimension(R.dimen.editTextUtilsMinHeightDefault));
         }
         ta.recycle();
@@ -295,6 +295,41 @@ public class EditTextUtils extends RelativeLayout {
      */
     private void clearText(){
         editText.setText("");
+    }
+
+    /**
+     * 判断输入框内容是否不符合要求
+     * @param minLength min length
+     * @param maxLength max length
+     * @param fixLength 有固定要求的长度
+     * @return true 为不符合
+     */
+    public boolean contentIsUnusable(Integer minLength, Integer maxLength, Integer fixLength){
+        if (editText.getText().length() == 0){
+            //先判断是否为空
+            return true;
+        }else {
+            boolean isUnusable;
+            if (minLength == null && maxLength == null && fixLength == null) {
+                //这个位置只是为了判断是否为空,在上面判断完了已经,直接返回就行了
+                isUnusable = false;
+            }else {
+                if (fixLength != null){
+                    //如果存在固定长度要求 直接判断是不是满足固定长度就行了
+                    isUnusable = editText.getText().length() != fixLength;
+                } else{
+                    //没有固定长度要求
+                    if (minLength == null){
+                        //没有最小长度时 判断是不是低于最大长度
+                        isUnusable = editText.getText().length() > maxLength;
+                    }else {
+                        //最小 最大长度存在要求时 判断是不是处于其区间
+                        isUnusable = editText.getText().length() < minLength || editText.getText().length() > maxLength;
+                    }
+                }
+            }
+            return isUnusable;
+        }
     }
 
     /**
