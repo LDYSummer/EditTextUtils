@@ -76,7 +76,7 @@ public class EditTextUtils extends RelativeLayout {
         mTextColor = ta.getColor(R.styleable.EditTextUtils_textColor,getResources().getColor(R.color.editTextUtilsTextColorDefault));
         mHintColor = ta.getColor(R.styleable.EditTextUtils_hintColor,getResources().getColor(R.color.editTextUtilsHintColorDefault));
         mInputMode = ta.getInt(R.styleable.EditTextUtils_imeOptions,EditorInfo.IME_ACTION_DONE);
-        mInputType = ta.getInt(R.styleable.EditTextUtils_inputType, InputType.TYPE_NULL);
+//        mInputType = ta.getInt(R.styleable.EditTextUtils_inputType, InputType.TYPE_NULL);
         if (mMode == TYPE_MULTILINE){
             mShowTextCount = ta.getBoolean(R.styleable.EditTextUtils_showTextCount,false);
             mMaxTextCount = ta.getInteger(R.styleable.EditTextUtils_maxTextCount,100);
@@ -148,7 +148,7 @@ public class EditTextUtils extends RelativeLayout {
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTextSize);
         editText.setTextColor(mTextColor);
         editText.setImeOptions(mInputMode);
-        editText.setInputType(mInputType);
+//        editText.setInputType(mInputType);
         editText.setOnFocusChangeListener(focusChangeListener);
         editText.setOnEditorActionListener(editorActionListener);
 
@@ -197,7 +197,7 @@ public class EditTextUtils extends RelativeLayout {
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTextSize);
         editText.setTextColor(mTextColor);
         editText.setImeOptions(mInputMode);
-        editText.setInputType(mInputType);
+//        editText.setInputType(mInputType);
         editText.addTextChangedListener(textWatcher);
         editText.setMinHeight(px2dip(mContext,mMinHeight));
         editText.setOnFocusChangeListener(focusChangeListener);
