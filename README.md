@@ -18,7 +18,7 @@ allprojects {
 #### dependency
 ```javascript
 dependencies {
-	        implementation 'com.github.LDYSummer:EditTextUtils:1.0.1'
+	        implementation 'com.github.LDYSummer:EditTextUtils:1.0.2'
 	}
 ```
 ### 属性说明
