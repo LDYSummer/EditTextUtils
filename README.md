@@ -32,6 +32,7 @@ dependencies {
 |文本颜色 | app:textColor | color 默认#333333 |
 |提示文本颜色 | app:hintColor | color 默认#999999 |
 |回车按钮类型 | app:imeOptions | actionNone<br>actionGo<br>actionSearch<br>actionSend<br>actionNext<br>actionDone|
+|键盘类型 | app:inputType | system inputType |
 |多行文本输入框字数统计是否显示 | app:showTextCount | boolean 默认false|
 |多行文本输入框最大字数限制 | app:maxTextCount | integer 默认100 |
 |多行文本输入框最小高度 | app:minHeight | 默认150dp | 
@@ -57,7 +58,8 @@ dependencies {
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:hint="单行密码形式输入框"
-        app:editTextMode="modeSinglePwd"/>
+        app:editTextMode="modeSinglePwd"
+	app:inputType="textPassword"/>
 ```
 
 ```javascript
