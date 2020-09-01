@@ -37,7 +37,9 @@
             android:layout_height="match_parent"
             android:background="@color/editTextUtilsTransparentDefault"
             android:singleLine="true"
-            android:layout_toStartOf="@id/public_single_line_btn_delete"/>
+            android:layout_toStartOf="@id/public_single_line_btn_delete"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/text_cursor"/>
 
     </RelativeLayout>
 
