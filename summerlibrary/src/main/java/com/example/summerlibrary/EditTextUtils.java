@@ -215,6 +215,7 @@ public class EditTextUtils extends RelativeLayout {
                 if (mMode != TYPE_MULTILINE){
                     single_btn_delete.setVisibility(VISIBLE);
                 }
+                showKeyboard(v);
             }else {
                 if (mMode != TYPE_MULTILINE){
                     single_btn_delete.setVisibility(INVISIBLE);
@@ -275,6 +276,17 @@ public class EditTextUtils extends RelativeLayout {
             }
         }
     };
+
+    /**
+     * show system keyboard
+     * @param view view this
+     */
+    public void showKeyboard(View view){
+        editText.requestFocus();
+        InputMethodManager manager = ((InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE));
+        assert manager != null;
+        manager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+    }
 
     /**
      * close system keyboard
