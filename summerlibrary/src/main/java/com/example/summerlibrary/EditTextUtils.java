@@ -293,7 +293,7 @@ public class EditTextUtils extends RelativeLayout {
      * @param view view this
      */
     public void closeKeyboard( View view ){
-        view.clearFocus();
+        editText.clearFocus();
         InputMethodManager manager = ((InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE));
         assert manager != null;
         manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
