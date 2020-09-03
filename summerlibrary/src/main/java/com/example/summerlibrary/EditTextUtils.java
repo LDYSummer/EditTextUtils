@@ -149,6 +149,7 @@ public class EditTextUtils extends RelativeLayout {
         editText.setTextColor(mTextColor);
         editText.setImeOptions(mInputMode);
         editText.setInputType(mInputType);
+        editText.addTextChangedListener(textWatcher);
         editText.setOnFocusChangeListener(focusChangeListener);
         editText.setOnEditorActionListener(editorActionListener);
 
@@ -252,7 +253,7 @@ public class EditTextUtils extends RelativeLayout {
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             enterWords= s;
             //TextView显示已有字数
-            if (mShowTextCount){
+            if (mMode == TYPE_MULTILINE && mShowTextCount){
                 multi_tv_counter.setText(new StringBuffer().append(enterWords.length()).append(" / ").append(mMaxTextCount));
             }
         }
@@ -260,18 +261,21 @@ public class EditTextUtils extends RelativeLayout {
         @Override
         public void afterTextChanged(Editable s) {
 
-            //delete show status
-            setDeleteShow(s.length() > 0);
-
-            int selectionStart = editText.getSelectionStart();
-            int selectionEnd = editText.getSelectionEnd();
-            if (enterWords.length() > mMaxTextCount) {
-                //删除多余输入的字（不会显示出来）
-                s.delete(selectionStart - 1, selectionEnd);
-                editText.setText(s);
-                //设置光标在最后
-                editText.setSelection(s.length());
+            if (mMode == TYPE_MULTILINE){
+                int selectionStart = editText.getSelectionStart();
+                int selectionEnd = editText.getSelectionEnd();
+                if (enterWords.length() > mMaxTextCount) {
+                    //删除多余输入的字（不会显示出来）
+                    s.delete(selectionStart - 1, selectionEnd);
+                    editText.setText(s);
+                    //设置光标在最后
+                    editText.setSelection(s.length());
+                }
+            }else {
+                //delete show status
+                setDeleteShow(s.length() > 0);
             }
+
         }
     };
 
@@ -280,14 +284,8 @@ public class EditTextUtils extends RelativeLayout {
      * @param showDelete is show
      */
     private void setDeleteShow(boolean showDelete){
-        if (showDelete){
-            if (mMode != TYPE_MULTILINE){
-                single_btn_delete.setVisibility(VISIBLE);
-            }
-        }else {
-            if (mMode != TYPE_MULTILINE){
-                single_btn_delete.setVisibility(INVISIBLE);
-            }
+        if (mMode != TYPE_MULTILINE){
+            single_btn_delete.setVisibility(showDelete?VISIBLE:INVISIBLE);
         }
     }
 
