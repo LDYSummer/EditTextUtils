@@ -212,14 +212,9 @@ public class EditTextUtils extends RelativeLayout {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
             if(hasFocus){
-                if (mMode != TYPE_MULTILINE){
-                    single_btn_delete.setVisibility(VISIBLE);
-                }
                 showKeyboard(v);
             }else {
-                if (mMode != TYPE_MULTILINE){
-                    single_btn_delete.setVisibility(INVISIBLE);
-                }
+                setDeleteShow(false);
                 closeKeyboard(v);
             }
         }
@@ -265,6 +260,9 @@ public class EditTextUtils extends RelativeLayout {
         @Override
         public void afterTextChanged(Editable s) {
 
+            //delete show status
+            setDeleteShow(s.length() > 0);
+
             int selectionStart = editText.getSelectionStart();
             int selectionEnd = editText.getSelectionEnd();
             if (enterWords.length() > mMaxTextCount) {
@@ -276,6 +274,22 @@ public class EditTextUtils extends RelativeLayout {
             }
         }
     };
+
+    /**
+     * set delete btn is show
+     * @param showDelete is show
+     */
+    private void setDeleteShow(boolean showDelete){
+        if (showDelete){
+            if (mMode != TYPE_MULTILINE){
+                single_btn_delete.setVisibility(VISIBLE);
+            }
+        }else {
+            if (mMode != TYPE_MULTILINE){
+                single_btn_delete.setVisibility(INVISIBLE);
+            }
+        }
+    }
 
     /**
      * show system keyboard
@@ -297,6 +311,22 @@ public class EditTextUtils extends RelativeLayout {
         InputMethodManager manager = ((InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE));
         assert manager != null;
         manager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    /**
+     * set text with string
+     * @param content content string
+     */
+    public void setText(String content){
+        editText.setText(content);
+    }
+
+    /**
+     * set text with res
+     * @param resId res id
+     */
+    public void setText(int resId){
+        editText.setText(resId);
     }
 
     /**
