@@ -272,7 +272,7 @@ public class EditTextUtils extends RelativeLayout {
                     editText.setSelection(s.length());
                 }
             }else if (editText.hasFocus()){
-                //delete show status
+                //delete show status if has focus
                 setDeleteShow(s.length() > 0);
             }
 
