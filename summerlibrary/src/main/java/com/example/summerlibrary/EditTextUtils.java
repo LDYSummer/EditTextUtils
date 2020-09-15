@@ -271,7 +271,7 @@ public class EditTextUtils extends RelativeLayout {
                     //设置光标在最后
                     editText.setSelection(s.length());
                 }
-            }else {
+            }else if (editText.hasFocus()){
                 //delete show status
                 setDeleteShow(s.length() > 0);
             }
