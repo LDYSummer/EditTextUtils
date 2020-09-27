@@ -67,8 +67,6 @@
         <attr name="showTextCount" format="boolean"/>
 <!--        multiline max text count-->
         <attr name="maxTextCount" format="integer"/>
-<!--        multiline editText min height-->
-        <attr name="minHeight" format="dimension"/>
 
 <!--        keyboard input type-->
         <attr name="inputType">
