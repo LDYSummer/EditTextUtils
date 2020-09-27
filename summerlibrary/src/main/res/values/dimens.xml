@@ -4,4 +4,5 @@
     <dimen name="editTextUtilsDistanceDefault_12">12dp</dimen>
     <dimen name="editTextUtilsImgDefault_20">20dp</dimen>
     <dimen name="editTextUtilsTextFontDefault">15sp</dimen>
+    <dimen name="editTextUtilsMinHeightDefault">150dp</dimen>
 </resources>

@@ -35,6 +35,7 @@ public class EditTextUtils extends RelativeLayout {
     private int mInputType;
     private boolean mShowTextCount;
     private int mMaxTextCount;
+    private float mMinHeight;
 
     private int mMode;
     public static final int TYPE_SINGLE_LINE = 0x00000000;
@@ -79,6 +80,7 @@ public class EditTextUtils extends RelativeLayout {
         if (mMode == TYPE_MULTILINE){
             mShowTextCount = ta.getBoolean(R.styleable.EditTextUtils_showTextCount,false);
             mMaxTextCount = ta.getInteger(R.styleable.EditTextUtils_maxTextCount,100);
+            mMinHeight = ta.getDimension(R.styleable.EditTextUtils_minHeight,getResources().getDimension(R.dimen.editTextUtilsMinHeightDefault));
         }
         ta.recycle();
 
@@ -198,6 +200,7 @@ public class EditTextUtils extends RelativeLayout {
         editText.setImeOptions(mInputMode);
         editText.setInputType(mInputType);
         editText.addTextChangedListener(textWatcher);
+        editText.setMinHeight(px2dip(mContext,mMinHeight));
         editText.setOnFocusChangeListener(focusChangeListener);
         editText.setOnEditorActionListener(editorActionListener);
 
