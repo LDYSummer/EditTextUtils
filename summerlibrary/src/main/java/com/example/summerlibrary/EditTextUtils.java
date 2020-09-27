@@ -213,6 +213,9 @@ public class EditTextUtils extends RelativeLayout {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
             if(hasFocus){
+                if (mMode != TYPE_MULTILINE && editText.getText().length() > 0){
+                    setDeleteShow(true);
+                }
                 showKeyboard(v);
             }else {
                 setDeleteShow(false);
@@ -271,10 +274,11 @@ public class EditTextUtils extends RelativeLayout {
                     //设置光标在最后
                     editText.setSelection(s.length());
                 }
-            }else if (editText.hasFocus()){
-                //delete show status if has focus
-                setDeleteShow(s.length() > 0);
             }
+            //else if (editText.hasFocus()){
+            //                //delete show status if has focus
+            //                setDeleteShow(s.length() > 0);
+            //            }
 
         }
     };

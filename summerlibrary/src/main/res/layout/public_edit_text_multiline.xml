@@ -15,7 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:cursorVisible="true"
-        android:textCursorDrawable="@drawable/text_cursor"/>
+        android:textCursorDrawable="@drawable/text_cursor"
+        android:inputType="textMultiLine"/>
 
     <TextView
         android:id="@+id/public_multiline_counter"
