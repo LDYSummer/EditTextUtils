@@ -27,7 +27,6 @@
         android:textColor="@color/editTextUtilsHintColorDefault"
         android:layout_below="@id/public_multiline_et"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:visibility="gone"/>
 
 </RelativeLayout>
